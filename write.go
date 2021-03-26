@@ -9,8 +9,8 @@ import (
 
 	"time"
 
-	"https://github.com/cassioseffrin/go-whatsapp/binary"
-	"https://github.com/cassioseffrin/go-whatsapp/crypto/cbc"
+	"github.com/cassioseffrin/go-whatsapp/binary"
+	"github.com/cassioseffrin/go-whatsapp/crypto/cbc"
 	"github.com/gorilla/websocket"
 	"github.com/pkg/errors"
 )

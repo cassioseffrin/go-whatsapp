@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"https://github.com/cassioseffrin/go-whatsapp/binary"
-	"https://github.com/cassioseffrin/go-whatsapp/binary/proto"
+	"github.com/cassioseffrin/go-whatsapp/binary"
+	"github.com/cassioseffrin/go-whatsapp/binary/proto"
 )
 
 /*
@@ -301,7 +301,7 @@ func (wac *Conn) handleWithCustomHandlers(message interface{}, handlers []Handle
 				}
 			}
 		}
-	
+
 	case BatteryMessage:
 		for _, h := range handlers {
 			if x, ok := h.(BatteryMessageHandler); ok {
@@ -312,7 +312,7 @@ func (wac *Conn) handleWithCustomHandlers(message interface{}, handlers []Handle
 				}
 			}
 		}
-	
+
 	case Contact:
 		for _, h := range handlers {
 			if x, ok := h.(NewContactHandler); ok {

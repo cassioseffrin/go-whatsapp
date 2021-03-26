@@ -1,14 +1,10 @@
-module https://github.com/cassioseffrin/go-whatsapp
+module github.com/cassioseffrin/go-whatsapp
+
+go 1.16
 
 require (
-	https://github.com/cassioseffrin/go-whatsapp/examples/echo v0.0.0-20190325075644-cc2581bbf24d // indirect
-	https://github.com/cassioseffrin/go-whatsapp/examples/restoreSession v0.0.0-20190325075644-cc2581bbf24d // indirect
-	https://github.com/cassioseffrin/go-whatsapp/examples/sendImage v0.0.0-20190325075644-cc2581bbf24d // indirect
-	https://github.com/cassioseffrin/go-whatsapp/examples/sendTextMessages v0.0.0-20190325075644-cc2581bbf24d // indirect
-	github.com/golang/protobuf v1.3.0
-	github.com/gorilla/websocket v1.4.1
-	github.com/pkg/errors v0.8.1
-	golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2
+	github.com/golang/protobuf v1.5.1
+	github.com/gorilla/websocket v1.4.2
+	github.com/pkg/errors v0.9.1
+	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2
 )
-
-go 1.13

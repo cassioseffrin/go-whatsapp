@@ -2,7 +2,7 @@ package binary
 
 import (
 	"fmt"
-	"https://github.com/cassioseffrin/go-whatsapp/binary/token"
+	"github.com/cassioseffrin/go-whatsapp/binary/token"
 	"math"
 	"strconv"
 	"strings"
