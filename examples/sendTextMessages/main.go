@@ -6,14 +6,13 @@ import (
 	"os"
 	"time"
 
-	"github.com/Rhymen/go-whatsapp/binary/proto"
-
 	qrcodeTerminal "github.com/Baozisoftware/qrcode-terminal-go"
-	"github.com/Rhymen/go-whatsapp"
+	"https://github.com/cassioseffrin/go-whatsapp"
+	"https://github.com/cassioseffrin/go-whatsapp/binary/proto"
 )
 
 func main() {
-	//create new WhatsApp connection
+ 
 	wac, err := whatsapp.NewConn(5 * time.Second)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
@@ -28,23 +27,23 @@ func main() {
 
 	<-time.After(3 * time.Second)
 
-	previousMessage := "😘"
+	previousMessage := "👍"
 	quotedMessage := proto.Message{
 		Conversation: &previousMessage,
 	}
 
 	ContextInfo := whatsapp.ContextInfo{
 		QuotedMessage:   &quotedMessage,
-		QuotedMessageID: "",
-		Participant:     "", //Who sent the original message
+		QuotedMessageID: "5496852447@s.whatsapp.net",
+		Participant:     "Cassio", //Who sent the original message
 	}
 
 	msg := whatsapp.TextMessage{
 		Info: whatsapp.MessageInfo{
-			RemoteJid: "number@s.whatsapp.net",
+			RemoteJid: "555496852447@s.whatsapp.net",
 		},
 		ContextInfo: ContextInfo,
-		Text:        "Message sent by github.com/Rhymen/go-whatsapp",
+		Text:        "Enviada por Cassio!!!",
 	}
 
 	msgId, err := wac.Send(msg)
@@ -55,6 +54,48 @@ func main() {
 		fmt.Println("Message Sent -> ID : " + msgId)
 	}
 }
+
+// func main() {
+// 	//create new WhatsApp connection
+// 	wac, err := whatsapp.NewConn(2 * time.Second)
+// 	if err != nil {
+// 		fmt.Fprintf(os.Stderr, "error creating connection: %v\n", err)
+// 		return
+// 	}
+
+// 	err = login(wac)
+// 	if err != nil {
+// 		fmt.Fprintf(os.Stderr, "error logging in: %v\n", err)
+// 		return
+// 	}
+
+// 	<-time.After(3 * time.Second)
+
+// 	var numbers []string
+
+// 	numbers = append(numbers, "5554996852447")
+
+// 	for index, element := range numbers {
+// 		print(index)
+
+// 		msg := whatsapp.TextMessage{
+// 			Info: whatsapp.MessageInfo{
+// 				RemoteJid: element + "@s.whatsapp.net",
+// 			},
+// 			Text: fmt.Sprintf("teste %v", index),
+// 		}
+
+// 		// err = wac.Send(msg)
+// 		msgId, err := wac.Send(msg)
+// 		if err != nil {
+// 			fmt.Fprintf(os.Stderr, "error sending message: %v", err)
+// 			os.Exit(1)
+// 		} else {
+// 			fmt.Println("Message Sent -> ID : " + msgId)
+// 		}
+// 	}
+
+// }
 
 func login(wac *whatsapp.Conn) error {
 	//load saved session

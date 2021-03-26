@@ -7,7 +7,7 @@ import (
 	"time"
 
 	qrcodeTerminal "github.com/Baozisoftware/qrcode-terminal-go"
-	"github.com/Rhymen/go-whatsapp"
+	"https://github.com/cassioseffrin/go-whatsapp"
 )
 
 func main() {
@@ -26,18 +26,19 @@ func main() {
 
 	<-time.After(3 * time.Second)
 
-	img, err := os.Open("image.jpg")
+	img, err := os.Open("lula.png")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error reading file: %v\n", err)
 		os.Exit(1)
 	}
+	// RemoteJid: "49999606336@s.whatsapp.net",
 
 	msg := whatsapp.ImageMessage{
 		Info: whatsapp.MessageInfo{
-			RemoteJid: "number@s.whatsapp.net",
+			RemoteJid: "54996852447@s.whatsapp.net",
 		},
-		Type:    "image/jpeg",
-		Caption: "Hello Gopher!",
+		Type:    "image/png",
+		Caption: "Enviada pelo CassioRobot!",
 		Content: img,
 	}
 
@@ -83,6 +84,7 @@ func login(wac *whatsapp.Conn) error {
 func readSession() (whatsapp.Session, error) {
 	session := whatsapp.Session{}
 	file, err := os.Open(os.TempDir() + "/whatsappSession.gob")
+	fmt.Printf(os.TempDir() + "/whatsappSession.gob\n")
 	if err != nil {
 		return session, err
 	}
@@ -97,6 +99,7 @@ func readSession() (whatsapp.Session, error) {
 
 func writeSession(session whatsapp.Session) error {
 	file, err := os.Create(os.TempDir() + "/whatsappSession.gob")
+
 	if err != nil {
 		return err
 	}
